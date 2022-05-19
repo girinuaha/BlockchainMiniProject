@@ -44,7 +44,7 @@ contract LacasaDeVilla is VillaBuilding, LandlordJob {
         
         uint deposit = getDetailVilla[_villaName].rentDeposit;
         address payable _tenantAddress = getDetailVilla[_villaName].currentTenant;
-        _tenantAddress.transfer(deposit);
+        _tenantAddress.transfer(deposit * 1 ether);
 
         getDetailVilla[_villaName].isOccupied = false; 
         getDetailVilla[_villaName].currentTenant = payable(address(0));
