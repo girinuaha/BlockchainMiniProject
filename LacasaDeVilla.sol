@@ -8,8 +8,6 @@ import "./Landlord.sol";
 
 contract LacasaDeVilla is VillaBuilding, LandlordJob {
     
-    address payable tenant;
-
     function checkEmptyVilla() public view returns (string[] memory) {
         return emptyVillaName;
     }
