@@ -12,7 +12,9 @@ Actor :
 
 What can Landlord do?
 - Build a Villa.
-- Demolish the Villa.
+- Demolish/Destroy the Villa.
+- Check if the Villa is Ready for Rent.
+- Check Villa status.
 - Check Out.
 
 What can Tenant do?
