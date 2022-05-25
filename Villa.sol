@@ -31,4 +31,10 @@ contract VillaBuilding {
         require(msg.value >= uint(uint(getDetailVilla[_villaName].rentPerNight * 1 ether) + uint(getDetailVilla[_villaName].rentDeposit * 1 ether)), "You don't have enough ether");
         _;
     }
+    
+    modifier checkDestroyable(string memory _villaName) {
+        require(getDetailVilla[_villaName].villaId != 0, "There is no room with that Name!");
+        require(getDetailVilla[_villaName].isOccupied == false, "Villa is occupied, Can't Destroy!!!");
+        _;
+    } 
 }
