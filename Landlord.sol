@@ -17,7 +17,7 @@ contract LandlordJob is VillaBuilding {
         emptyVillaName.push(_villaName);
     }
 
-    function destroyVilla (string memory _villaName) public onlyLandlord checkAvailability(_villaName) {
+    function destroyVilla (string memory _villaName) public onlyLandlord checkDestroyable(_villaName) {
         delete getDetailVilla[_villaName];
         villaTotal--;
     }
