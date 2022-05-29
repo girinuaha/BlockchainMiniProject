@@ -8,6 +8,7 @@ contract LandlordJob is VillaBuilding {
 
     uint public villaTotal = 0;
     uint public villaOccupied = 0;
+    uint totalFund;
     string[] emptyVillaName;
 
     function buildVilla (string memory _villaName, string memory _villaAddress, uint _rentCost, uint _rentDeposit) public onlyLandlord {
@@ -20,6 +21,15 @@ contract LandlordJob is VillaBuilding {
     function destroyVilla (string memory _villaName) public onlyLandlord checkDestroyable(_villaName) {
         delete getDetailVilla[_villaName];
         villaTotal--;
+    }
+    
+    function checkTotalFund() public view returns(uint) {
+        return totalFund / 1 ether;
+    }
+
+    function withdraw () public onlyLandlord {
+        landlord.transfer(totalFund);
+        totalFund = 0;
     }
 
     modifier onlyLandlord {
