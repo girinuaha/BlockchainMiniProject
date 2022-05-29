@@ -6,6 +6,7 @@ import "./StringUtils.sol";
 import "./Villa.sol";
 import "./Landlord.sol";
 
+//Main Contract
 contract LacasaDeVilla is VillaBuilding, LandlordJob {
     
     function checkEmptyVilla() public view returns (string[] memory) {
