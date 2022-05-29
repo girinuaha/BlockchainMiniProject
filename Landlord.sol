@@ -23,7 +23,7 @@ contract LandlordJob is VillaBuilding {
         villaTotal--;
     }
     
-    function checkTotalFund() public view returns(uint) {
+    function checkTotalFund() public view onlyLandlord returns(uint) {
         return totalFund / 1 ether;
     }
 
