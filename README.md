@@ -16,6 +16,8 @@ What can Landlord do?
 - Check if the Villa is Ready for Rent.
 - Check Villa status.
 - Check Out.
+- Check Total Fund.
+- Withdraw Fund.
 
 What can Tenant do?
 - Check if the Villa is Ready for Rent.
