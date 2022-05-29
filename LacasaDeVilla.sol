@@ -16,7 +16,7 @@ contract LacasaDeVilla is VillaBuilding, LandlordJob {
     function checkIn (string memory _villaName) public payable notLandlord checkAvailability(_villaName) checkAgreementFee(_villaName) {
         
         uint totalFee = (getDetailVilla[_villaName].rentPerNight + getDetailVilla[_villaName].rentDeposit) * 1 ether;
-        landlord.transfer(totalFee);
+        totalFund = totalFund + totalFee;
 
         getDetailVilla[_villaName].isOccupied = true;
         getDetailVilla[_villaName].currentTenant = payable(msg.sender);     
